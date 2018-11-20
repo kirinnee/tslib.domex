@@ -10,12 +10,6 @@ let pages :IPage = {
 			output: "index.html",
 			chunks: ['index'],
 			title: 'Index'
-		},
-		{
-			template: "index.html",
-			output: "home.html",
-			chunks: ['index'],
-			title: 'Index'
 		}
 	],
 };
