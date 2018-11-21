@@ -2,8 +2,9 @@ import {DOMExtend} from "./DOMExtend";
 
 type ClickListener = (button: number, event: MouseEvent) => void;
 type WheelListener = (delta: number, event: WheelEvent) => void;
+
 declare global{
-	interface HTMLElement{
+	interface HTMLOrSVGElement {
 		
 		Append(element:HTMLElement):HTMLElement;
 		
@@ -42,6 +43,12 @@ declare global{
 		WheelDown(listener: WheelListener): HTMLElement;
 		
 		WheelUp(listener: WheelListener): HTMLElement;
+	}
+	
+	interface SVGElement extends HTMLOrSVGElement {
+	}
+	
+	interface HTMLElement extends HTMLOrSVGElement {
 	}
 	
 	interface HTMLAnchorElement extends HTMLElement {
