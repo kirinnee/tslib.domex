@@ -1,5 +1,4 @@
-import {DOMEx} from "../../src";
-import {DOMExtend} from "../../src/DOMExtend";
+import {DOMEx, DOMExtend} from "../../src";
 import {Core, Kore} from "@kirinnee/core";
 
 let core: Core = new Kore();

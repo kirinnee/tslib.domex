@@ -1,4 +1,4 @@
-import {DOMEx} from "./index";
+import {ClickListener, DOMEx, WheelListener} from "./index";
 import {Core} from "@kirinnee/core";
 
 class DOMExtend implements DOMEx {
