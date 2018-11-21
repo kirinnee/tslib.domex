@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+        .super-secret-1 {
+            color: yellow;
+        }
+
+        .super-secret-2 {
+            background-color: blue;
+        }
+    </style>
+
+</head>
+<body>
+<div id="tests">
+    <button id="test-1">t1</button>
+    <button id="test-2">t2</button>
+    <button id="test-3">t3</button>
+    <button id="test-4">t4</button>
+</div>
+
+<div id="targetArea">
+    <div id="append-test">
+        <div id="class-1">lorem ipsum</div>
+        <div id="class-2">lorem ipsum</div>
+        <div id="class-3" class="super-secret-1 super-secret-2">lorem ipsum</div>
+        <div id="class-4" class="super-secret-1 super-secret-2">lorem ipsum</div>
+    </div>
+</div>
+</body>
+</html>

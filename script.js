@@ -13,7 +13,6 @@ Execute(command, args, watch).then();
 
 //The decision on what command to execute base on the arguments and whether watch exists
 async function Execute(command, args, watch) {
-    let coverage = args.filter(s => s === "--cover").length > 0; 
     let full = args.filter(s => s === "--full").length > 0;
     switch (command) {
         case "wp":
@@ -22,7 +21,6 @@ async function Execute(command, args, watch) {
             await run(wp);
             break;
         case "deploy":
-            await run("node script unit --cover");
             await run("node script e2e");
             await run("node script wp dist");
             break;
@@ -44,13 +42,6 @@ async function Execute(command, args, watch) {
             let test = headless;
             if (full) test = test.concat(real);
             await run(test.join(" && "));
-            break;
-        case "unit":
-            let mocha = `mocha --opts ./config/mocha.opts`;
-            if (watch) mocha += " --watch-extensions ts --watch ";
-            if (coverage) mocha = "nyc --nycrc-path ./config/.nycrc " + mocha; 
-            if (fs.existsSync("./.nyc_output")) rimraf.sync("./.nyc_output"); 
-            await run(mocha);
             break;
         case "publish":
             await run(`npm run deploy`);
