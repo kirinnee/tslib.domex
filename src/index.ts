@@ -4,51 +4,51 @@ type ClickListener = (button: number, event: MouseEvent) => void;
 type WheelListener = (delta: number, event: WheelEvent) => void;
 
 declare global{
-	interface HTMLOrSVGElement {
+	interface Element {
 		
-		Append(element:HTMLElement):HTMLElement;
+		Append(element: Element): Element;
 		
-		Append(element:HTMLElement[]): HTMLElement;
+		Append(element: Element[]): Element;
 		
-		Append(text: string): HTMLElement;
+		Append(text: string): Element;
 		
-		Append(text: string[]): HTMLElement;
+		Append(text: string[]): Element;
 		
-		Prepend(element:HTMLElement):HTMLElement;
+		Prepend(element: Element): Element;
 		
-		Prepend(element:HTMLElement[]): HTMLElement;
+		Prepend(element: Element[]): Element;
 		
-		Prepend(text: string): HTMLElement;
+		Prepend(text: string): Element;
 		
-		Prepend(text: string[]): HTMLElement;
+		Prepend(text: string[]): Element;
 		
-		AddClass(cls: string|string[]): HTMLElement;
+		AddClass(cls: string | string[]): Element;
 		
-		RemoveClass(cls:string|string[]): HTMLElement;
+		RemoveClass(cls: string | string[]): Element;
 		
 		Attr(attr:string):string;
 		
-		Attr(attr:string, value:string) :HTMLElement;
+		Attr(attr: string, value: string): Element;
 		
 		Style(attr:string):string;
 		
-		Style(attr:string, value:string):HTMLElement;
+		Style(attr: string, value: string): Element;
 		
 		Id(): string;
 		
-		Id(id: string): HTMLElement;
+		Id(id: string): Element;
 		
-		Click(listener: ClickListener): HTMLElement;
+		Click(listener: ClickListener): Element;
 		
-		WheelDown(listener: WheelListener): HTMLElement;
+		WheelDown(listener: WheelListener): Element;
 		
-		WheelUp(listener: WheelListener): HTMLElement;
+		WheelUp(listener: WheelListener): Element;
 	}
 	
-	interface SVGElement extends HTMLOrSVGElement {
+	interface SVGElement extends Element {
 	}
 	
-	interface HTMLElement extends HTMLOrSVGElement {
+	interface HTMLElement extends Element {
 	}
 	
 	interface HTMLAnchorElement extends HTMLElement {

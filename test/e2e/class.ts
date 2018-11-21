@@ -7,8 +7,8 @@ core.ExtendPrimitives();
 let domex: DOMEx = new DOMExtend(core);
 domex.ExtendPrimitives();
 
-let $ = function (id: string): HTMLDivElement {
-	return document.getElementById(id)! as HTMLDivElement;
+let $ = function (id: string): Element {
+	return document.getElementById(id)! as Element;
 };
 
 $("test-1")!.addEventListener("click", () => {

@@ -21,7 +21,9 @@ class DOMExtend implements DOMEx {
 	ExtendPrimitives(): void {
 		let k = this;
 		let c = this.core;
-		HTMLElement.prototype.Append = function (element: any): HTMLElement {
+		
+		
+		Element.prototype.Append = function (element: any): Element {
 			if (c.IsArray(element)) {
 				(element as any[]).Each(s => this.Append(s));
 				return this;
@@ -32,7 +34,7 @@ class DOMExtend implements DOMEx {
 			}
 		};
 		
-		HTMLElement.prototype.Prepend = function (element: any): HTMLElement {
+		Element.prototype.Prepend = function (element: any): Element {
 			if (c.IsArray(element)) {
 				(element as any[]).Each(s => this.Prepend(s));
 				return this;
@@ -43,7 +45,7 @@ class DOMExtend implements DOMEx {
 			}
 		};
 		
-		HTMLElement.prototype.AddClass = function (element: any): HTMLElement {
+		Element.prototype.AddClass = function (element: any): Element {
 			if (c.IsArray(element)) {
 				(element as string[]).Each(s => this.classList.add(s));
 			} else {
@@ -52,7 +54,7 @@ class DOMExtend implements DOMEx {
 			return this;
 		};
 		
-		HTMLElement.prototype.RemoveClass = function (element: any): HTMLElement {
+		Element.prototype.RemoveClass = function (element: any): Element {
 			if (c.IsArray(element)) {
 				(element as string[]).Each(s => this.classList.remove(s));
 			} else {
@@ -61,31 +63,32 @@ class DOMExtend implements DOMEx {
 			return this;
 		};
 		
-		HTMLElement.prototype.Attr = function (attr: any, value?: string): any {
+		Element.prototype.Attr = function (attr: any, value?: string): any {
 			if (value == null) return this.getAttribute(attr);
 			this.setAttribute(attr, value!);
 			return this;
 		};
 		
-		HTMLElement.prototype.Style = function (attr: any, value?: string): any {
+		Element.prototype.Style = function (attr: any, value?: string): any {
 			let a: string = k.C(attr);
 			if (value == null) return (window.getComputedStyle(this) as any)[a];
 			this.style[a] = value;
 			return this;
 		};
 		
-		HTMLElement.prototype.Id = function (value?: string): any {
+		Element.prototype.Id = function (value?: string): any {
 			if (value == null) return this.Attr('id');
 			this.Attr('id', value);
 			return this;
 		};
 		
-		HTMLElement.prototype.Click = function (listener: ClickListener): HTMLElement {
+		Element.prototype.Click = function (listener: ClickListener): Element {
 			this.addEventListener('click', (e: MouseEvent) => listener(e.which || e.button, e));
 			return this;
 		};
 		
-		HTMLElement.prototype.WheelUp = function (listener: WheelListener): HTMLElement {
+		Element.prototype.WheelUp = function (listener: WheelListener): Element {
+			
 			this.addEventListener('wheel', (e: WheelEvent) => {
 				if (e.wheelDeltaY > 0) listener(e.wheelDeltaY.Abs(), e);
 			});
@@ -98,7 +101,7 @@ class DOMExtend implements DOMEx {
 			return this;
 		};
 		
-		HTMLElement.prototype.WheelDown = function (listener: WheelListener): HTMLElement {
+		Element.prototype.WheelDown = function (listener: WheelListener): Element {
 			this.addEventListener('wheel', (e: WheelEvent) => {
 				if (e.wheelDeltaY < 0) listener(e.wheelDeltaY.Abs(), e);
 			});
@@ -110,6 +113,7 @@ class DOMExtend implements DOMEx {
 			});
 			return this;
 		};
+		
 		
 	}
 	
