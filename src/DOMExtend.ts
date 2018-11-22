@@ -113,8 +113,6 @@ class DOMExtend implements DOMEx {
 			});
 			return this;
 		};
-		
-		
 	}
 	
 	/**

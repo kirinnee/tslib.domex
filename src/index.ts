@@ -8,7 +8,7 @@ declare global{
 		
 		Append(element: Element): Element;
 		
-		Append(element: Element[]): Element;
+		Append(element: (string | Element)[]): Element;
 		
 		Append(text: string): Element;
 		
@@ -16,11 +16,10 @@ declare global{
 		
 		Prepend(element: Element): Element;
 		
-		Prepend(element: Element[]): Element;
 		
 		Prepend(text: string): Element;
 		
-		Prepend(text: string[]): Element;
+		Prepend(text: (string | Element)[]): Element;
 		
 		AddClass(cls: string | string[]): Element;
 		

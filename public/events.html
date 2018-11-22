@@ -2,13 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        #test-2 {
+            width: 20vw;
+            height: 20vw;
+            background-color: mediumpurple;
+        }
+
+        #test-3 {
+            width: 20vw;
+            height: 20vw;
+            background-color: aquamarine;
+        }
+    </style>
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
 <div id="tests">
     <button id="test-1">click</button>
-    <button id="test-2">scroll up</button>
-    <button id="test-3">scroll down</button>
+    <div id="test-2">scroll up</div>
+    <div id="test-3">scroll down</div>
 </div>
 
 <div id="targetArea">
