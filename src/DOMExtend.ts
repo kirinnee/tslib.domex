@@ -73,6 +73,11 @@ class DOMExtend implements DOMEx {
 			let a: string = k.C(attr);
 			if (value == null) return (window.getComputedStyle(this) as any)[a];
 			this.style[a] = value;
+			let cap: string = a.Capitalize();
+			this.style[`webkit${cap}`] = value;
+			this.style[`moz${cap}`] = value;
+			this.style[`ms${cap}`] = value;
+			this.style[`o${cap}`] = value;
 			return this;
 		};
 		
