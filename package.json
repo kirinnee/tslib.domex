@@ -1,6 +1,6 @@
 {
 	"name": "@kirinnee/domex",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Extend DOM prototype to have a few utility methods.",
 	"main": "index.js",
 	"license": "MIT",
