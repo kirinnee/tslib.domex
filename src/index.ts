@@ -6,41 +6,124 @@ type WheelListener = (delta: number, event: WheelEvent) => void;
 declare global{
 	interface Element {
 		
+		/**
+		 * Adds the element as the last child of the target element
+		 * @param element element to add
+		 * @constructor
+		 */
 		Append(element: Element): Element;
 		
+		/**
+		 * Adds the element or text array in order to the target element
+		 * @param element element to add
+		 * @constructor
+		 */
 		Append(element: (string | Element)[]): Element;
 		
+		/**
+		 * Adds the text as text node to the end of the element
+		 * @param text text to add
+		 * @constructor
+		 */
 		Append(text: string): Element;
 		
-		Append(text: string[]): Element;
-		
+		/**
+		 * Adds the element as the first child of the target element
+		 * @param element element to add
+		 * @constructor
+		 */
 		Prepend(element: Element): Element;
 		
-		
+		/**
+		 * Adds the text as text node as the first child of the target element
+		 * @param text text to add
+		 * @constructor
+		 */
 		Prepend(text: string): Element;
 		
+		/**
+		 * Adds the text or element array in order as the first child of the target element.
+		 * @param text
+		 * @constructor
+		 */
 		Prepend(text: (string | Element)[]): Element;
 		
+		/**
+		 * Adds the class to the element
+		 * @param cls class or classes to add
+		 * @constructor
+		 */
 		AddClass(cls: string | string[]): Element;
 		
+		/**
+		 * Removes the class from the element
+		 * @param cls class or classes to remove
+		 * @constructor
+		 */
 		RemoveClass(cls: string | string[]): Element;
 		
-		Attr(attr:string):string;
+		/**
+		 * Get the attribute with the specific key
+		 * @param attr attribute to access
+		 * @constructor
+		 */
+		Attr(attr: string): string;
 		
+		/**
+		 * Sets the attribute with the specified key
+		 * @param attr key of attribute
+		 * @param value value of attribue
+		 * @constructor
+		 */
 		Attr(attr: string, value: string): Element;
 		
-		Style(attr:string):string;
+		/**
+		 * Access the style of the attribute
+		 * @param attr style name to access
+		 * @constructor
+		 */
+		Style(attr: string): string;
 		
+		/**
+		 * Set the style of the attribute
+		 * @param attr style name to set
+		 * @param value value to set
+		 * @constructor
+		 */
 		Style(attr: string, value: string): Element;
 		
+		/**
+		 * Access the id of the element
+		 * @constructor
+		 */
 		Id(): string;
 		
+		/**
+		 * Set the id of the element
+		 * @param id
+		 * @constructor
+		 */
 		Id(id: string): Element;
 		
+		/**
+		 * Adds click listener to the element
+		 * @param listener function to execute on click
+		 * @constructor
+		 */
 		Click(listener: ClickListener): Element;
 		
+		/**
+		 * Adds wheel down listener to the element
+		 * @param listener function to execute on wheel down
+		 * @constructor
+		 */
 		WheelDown(listener: WheelListener): Element;
 		
+		/**
+		 * Adds wheel up listener to the element
+		 * @param listener function to execute on wheel up
+		 * @constructor
+		 */
 		WheelUp(listener: WheelListener): Element;
 	}
 	
