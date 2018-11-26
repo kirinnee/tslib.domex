@@ -27,3 +27,12 @@ test('Get And Set Style', async t => {
 	
 	(value as any)['color'].should.equal("rgb(0, 0, 0)");
 });
+
+test('Set style using object literal', async t => {
+	await t
+		.click("#test-3");
+	let value = await Selector("#m-style").style;
+	(value as any)['width'].should.equal('500px');
+	(value as any)['height'].should.equal('500px');
+	(value as any)['left'].should.equal('50px');
+});

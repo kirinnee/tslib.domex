@@ -93,6 +93,13 @@ declare global{
 		Style(attr: string, value: string): Element;
 		
 		/**
+		 * Sets the style according to the attribute of the object
+		 * @param styles style object, in form of key-pair value
+		 * @constructor
+		 */
+		Style(styles: { [s: string]: string }): Element;
+		
+		/**
 		 * Access the id of the element
 		 * @constructor
 		 */

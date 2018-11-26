@@ -20,4 +20,12 @@ $("test-2")!.addEventListener("click", () => {
 	let style: string = $("target").Style("color");
 	$("style").Style("color", style);
 });
+$("test-3")!.addEventListener('click', () => {
+	let style: { [s: string]: string } = {
+		width: "500px",
+		height: "500px",
+		left: "50px"
+	};
+	$("m-style").Style(style);
+});
 

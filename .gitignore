@@ -2,6 +2,7 @@ node_modules/
 .nyc_output/
 coverage/
 .idea/*
+index.js
 !.idea/runConfigurations
 !.idea/*.iml
 !.idea/*.xml

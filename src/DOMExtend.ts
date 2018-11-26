@@ -70,8 +70,18 @@ class DOMExtend implements DOMEx {
 		};
 		
 		Element.prototype.Style = function (attr: any, value?: string): any {
+			if (!c.IsAnyString(attr)) {
+				for (let k in attr) {
+					if (attr.hasOwnProperty(k)) {
+						this.Style(k, attr[k]);
+					}
+				}
+				return this;
+			}
 			let a: string = k.C(attr);
-			if (value == null) return (window.getComputedStyle(this) as any)[a];
+			if (value == null) {
+				if (c.IsAnyString(attr)) return (window.getComputedStyle(this) as any)[a];
+			}
 			this.style[a] = value;
 			let cap: string = a.Capitalize();
 			this.style[`webkit${cap}`] = value;
