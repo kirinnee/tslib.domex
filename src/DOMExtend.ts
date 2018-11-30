@@ -79,12 +79,11 @@ class DOMExtend implements DOMEx {
 				return this;
 			}
 			let a: string = k.C(attr);
-			if (a === "borderColor") a = "borderTopColor";
-			if (a === "borderWidth") a = "borderTopWidth";
-			if (a === "borderStyle") a = "borderTopStyle";
-			
 			let cap: string = a.Capitalize();
 			if (value == null) {
+				if (a === "borderColor") a = "borderTopColor";
+				if (a === "borderWidth") a = "borderTopWidth";
+				if (a === "borderStyle") a = "borderTopStyle";
 				if (c.IsAnyString(attr)) {
 					let styles: any = window.getComputedStyle(this);
 					return styles[a] ||
