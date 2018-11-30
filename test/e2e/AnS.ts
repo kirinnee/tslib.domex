@@ -29,3 +29,10 @@ $("test-3")!.addEventListener('click', () => {
 	$("m-style").Style(style);
 });
 
+$("test-4")!.addEventListener('click', () => {
+	let vp: Element = $('vendor-prefix')!;
+	vp.innerHTML = vp.Style('border-color');
+	vp.innerHTML += "<br>" + vp.Style('border-style');
+	vp.innerHTML += "<br>" + vp.Style('border-width');
+});
+

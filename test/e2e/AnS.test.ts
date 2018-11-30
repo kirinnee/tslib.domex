@@ -36,3 +36,10 @@ test('Set style using object literal', async t => {
 	(value as any)['height'].should.equal('500px');
 	(value as any)['left'].should.equal('50px');
 });
+
+test('Border properties are normalized', async t => {
+	await t
+		.click("#test-4");
+	let value = await Selector("#vendor-prefix").innerText;
+	value.LineBreak().join(',').trim().should.deep.equal('rgb(255, 0, 0),solid,1px');
+});
