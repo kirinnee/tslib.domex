@@ -34,5 +34,6 @@ $("test-4")!.addEventListener('click', () => {
 	vp.innerHTML = vp.Style('border-color');
 	vp.innerHTML += "<br>" + vp.Style('border-style');
 	vp.innerHTML += "<br>" + vp.Style('border-width');
+	vp.innerHTML += "<br>" + vp.Style('border-radius');
 });
 

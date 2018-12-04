@@ -41,5 +41,5 @@ test('Border properties are normalized', async t => {
 	await t
 		.click("#test-4");
 	let value = await Selector("#vendor-prefix").innerText;
-	value.LineBreak().join(',').trim().should.deep.equal('rgb(255, 0, 0),solid,1px');
+	value.LineBreak().join(',').trim().should.deep.equal('rgb(255, 0, 0),solid,1px,5px');
 });

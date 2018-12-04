@@ -81,6 +81,7 @@ class DOMExtend implements DOMEx {
 			let a: string = k.C(attr);
 			let cap: string = a.Capitalize();
 			if (value == null) {
+				if (a === "borderRadius") a = "borderTopRightRadius";
 				if (a === "borderColor") a = "borderTopColor";
 				if (a === "borderWidth") a = "borderTopWidth";
 				if (a === "borderStyle") a = "borderTopStyle";
@@ -145,9 +146,9 @@ class DOMExtend implements DOMEx {
 	 */
 	private C(css: string): string {
 		return css.split('-')
-			.Where(s => s.trim() != '')
-			.Map((s, i) => i === 0 ? s : s.Capitalize())
-			.join('');
+		          .Where(s => s.trim() != '')
+		          .Map((s, i) => i === 0 ? s : s.Capitalize())
+		          .join('');
 	}
 }
 
