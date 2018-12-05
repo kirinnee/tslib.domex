@@ -7,6 +7,12 @@ declare global{
 	interface Element {
 		
 		/**
+		 * Get children element as array
+		 * @constructor
+		 */
+		Children(): Element[];
+		
+		/**
 		 * Adds the element as the last child of the target element
 		 * @param element element to add
 		 * @constructor

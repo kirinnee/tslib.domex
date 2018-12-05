@@ -22,6 +22,13 @@ class DOMExtend implements DOMEx {
 		let k = this;
 		let c = this.core;
 		
+		Element.prototype.Children = function (): Element[] {
+			let ret: Element[] = [];
+			for (let i = 0; i < this.children.length; i++) {
+				ret.push(this.children.item(i)!);
+			}
+			return ret;
+		};
 		
 		Element.prototype.Append = function (element: any): Element {
 			if (c.IsArray(element)) {
