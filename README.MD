@@ -2,6 +2,11 @@
 
 Extend DOM prototype to have a few utility methods.
 
+
+Source: [GitLab](https://gitlab.com/node-packages-kirin/dom-ex)
+
+Mirror: [GitHub](https://github.com/kirinnee/tslib.domex)
+
 # Getting Started
 
 Install via NPM 
